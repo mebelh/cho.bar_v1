@@ -1,5 +1,5 @@
 body {
-    background-color: #F4F4F4;
+    background-color: #f4f4f4;
 }
 
 .content-auth-page {
@@ -33,17 +33,15 @@ body {
 }
 
 .nav-wrapper {
-    background-color: #FBFBFB;
+    background-color: #fbfbfb;
     padding: 0 3rem 0 3rem;
     z-index: 3;
-    border-bottom: solid 1px #003A65;
-
+    border-bottom: solid 1px #003a65;
 }
 
 nav {
     z-index: 2;
 }
-
 
 .nav-wrapper a {
     color: #343434;
@@ -51,36 +49,53 @@ nav {
     text-shadow: none;
 }
 
-
-.auth_login form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center
-}
-
-.auth_login .btn {
-    background-color: #003A65;
+.auth_login,
+.auth_register {
+    box-shadow: 1px 2px 2px rgba(4, 93, 177, 0.356);
+    background-color: #fff;
+    position: relative;
 }
 
 .auth_login {
     margin-left: 180px;
-    background-color: #fff;
     width: 400px;
     height: 440px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    box-shadow: 1px 2px 2px rgba(4, 93, 177, 0.356);
+}
 
+.auth_register {
+    margin-left: 100px;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.auth_register_form {
+    display: flex;
+    flex-direction: row;
+}
+
+.auth_login form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth_login .btn {
+    background-color: #003a65;
 }
 
 .auth_login div {
     width: 240px;
 }
 
-.auth_login::after {
+.auth_login::after,
+.auth_register::after {
     display: block;
     content: "";
     width: 100%;
@@ -89,9 +104,15 @@ nav {
     top: 0;
     left: 0;
     background-color: #fff;
-    transform: translateY(440px) skewY(6deg);
     transform-origin: right;
     box-shadow: 1px 2px 2px rgba(4, 93, 177, 0.356);
     z-index: 1;
+}
 
+.auth_login::after {
+    transform: translateY(440px) skewY(6deg);
+}
+
+.auth_register::after {
+    transform: translateY(600px) skewY(4deg);
 }
