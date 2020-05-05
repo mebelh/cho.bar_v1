@@ -2,17 +2,19 @@
     {{>menu}}
 
     <div class="imgBlock">
-        <div class="imgBlock_img shadow" style="background-image: image({{img}});">
+        <div class="imgBlock_img shadow" style="background-image: url({{candidate.img}});">
 
         </div>
-        <div class="imgBlock_name">{{name}}</div>
-        <div class="imgBlock_age">{{age}}</div>
+        <div class="imgBlock_name">{{candidate.name}}</div>
+        <div class="imgBlock_age">{{candidate.age}}</div>
     </div>
     <div class="descriptionBloc shadow">
-        <p class="descriptionBloc_text">{{description}}</p>
+        <p class="descriptionBloc_text">{{candidate.description}}</p>
     </div>
-    <div class="buttons">
-        <button class="btn green">CHOтко</button>
-        <button class="btn deep-orange accent-4">Дальше</button>
-    </div>
+
+    <form action="/search/" method="POST" class="buttons">
+        <input type="submit" class="btn green" value="CHOтко" id="search_like" data-like='1'>
+        <input type="submit" class="btn deep-orange accent-4" value="дальше" id="search_next" for='next' data-like="0">
+        <input type="hidden" id="id" data-id="{{candidate.id}}">
+    </form>
 </div>

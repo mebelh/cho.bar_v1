@@ -3,6 +3,7 @@ const path = require("path");
 
 const app = express();
 const exphbs = require("express-handlebars");
+const bodyParser = require("body-parser");
 const Handlebars = require("handlebars");
 const mongoose = require("mongoose");
 const session = require("express-session");
@@ -52,6 +53,9 @@ app.use(
 );
 
 app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 app.use(flash());
 
 app.use("/", firstVisitRout);
@@ -67,17 +71,15 @@ const start = async () => {
             useFindAndModify: false,
         });
 
-        const candidate = await User.findOne();
-
-        if (!candidate) {
-            const user = new User({
-                login: "memet",
-                password: "123",
-                name: "Memet",
-                gender: 0,
-            });
-            await user.save();
-        }
+        // for (let index = 0; index < 10; index++) {
+        //     const element = new User({
+        //         login: "clone" + index,
+        //         password: "clone" + index,
+        //         description: "i am bot num" + index,
+        //         gender: "male",
+        //     });
+        //     await element.save();
+        // }
 
         app.listen(PORT, () => {
             console.log("Server has been started on " + PORT);
