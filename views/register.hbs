@@ -7,13 +7,13 @@
                     <div class="row auth-register-form_child">
                         <div class="row">
                             <div class="input-field">
-                                <input id="login" type="text" class="validate">
+                                <input id="login" name="login" type="text" class="validate" required>
                                 <label for="login">Логин</label>
                             </div>
                         </div>
                         <div class="row auth-register-form_child">
                             <div class="input-field">
-                                <input id="password" type="text" class="validate">
+                                <input id="password" name="password" type="text" class="validate" required>
                                 <label for="password">Пароль</label>
                             </div>
                         </div>
@@ -21,7 +21,7 @@
 
                     <div class="row auth-register-form_child">
                         <div class="input-field">
-                            <textarea id="description" class="materialize-textarea"></textarea>
+                            <textarea id="description" name="description" class="materialize-textarea"></textarea>
                             <label for="description">Расскажите немного о себе</label>
                         </div>
                     </div>
@@ -29,13 +29,13 @@
                         <h6>Пол</h6>
                         <p>
                             <label>
-                                <input name="group1" type="radio" checked />
+                                <input name="gender" id="gender" type="radio" value="male" checked />
                                 <span>Парень</span>
                             </label>
                         </p>
                         <p>
                             <label>
-                                <input name="group1" type="radio" />
+                                <input name="gender" id="gender" type="radio" value="famale" />
                                 <span>Девушка</span>
                             </label>
                         </p>

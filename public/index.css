@@ -165,6 +165,10 @@ nav {
     background-color: #f0f0f0;
 }
 
+.menu ul li.active {
+    background-color: #f0f0f0;
+}
+
 /* Моя страница */
 
 .mypage {
@@ -187,6 +191,23 @@ nav {
     min-height: 400px;
     margin-right: 200px;
     margin-top: 100px;
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+.imgBlock_name,
+.imgBlock_age {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgBlock_name {
+    font-size: 2rem;
+}
+
+.imgBlock_age {
+    font-size: 1.2rem;
 }
 
 .imgBlock_img {

@@ -14,10 +14,10 @@ const userSchema = new Schema({
         required: true,
         default: "Имя",
     },
-    birthYear: {
+    age: {
         type: Number,
         required: true,
-        default: 2000,
+        default: 0000,
     },
     description: {
         type: String,
@@ -29,9 +29,8 @@ const userSchema = new Schema({
             "https://catherinecgilmore.com/wp-content/uploads/2015/10/Twitter-emogie-wink-300x300.png",
     },
     gender: {
-        type: Number,
+        type: String,
         required: true,
-        //0 - male, 1 - female
     },
     likes: {
         peoples: [

@@ -1,7 +1,19 @@
 <div class="menu shadow">
     <ul>
+        {{#if isMy}}
+        <li class="active"><a href="/mypage">Моя анкета</a></li>
+        {{else}}
         <li><a href="/mypage">Моя анкета</a></li>
+        {{/if}}
+        {{#if isSearch}}
+        <li class="active"><a href="/search">Смотреть анкеты</a></li>
+        {{else}}
         <li><a href="/search">Смотреть анкеты</a></li>
+        {{/if}}
+        {{#if isMessages}}
+        <li class="active"><a href="/messages">Сообщения</a></li>
+        {{else}}
         <li><a href="/messages">Сообщения</a></li>
+        {{/if}}
     </ul>
 </div>
