@@ -5,6 +5,9 @@ const app = express();
 const exphbs = require("express-handlebars");
 const Handlebars = require("handlebars");
 const mongoose = require("mongoose");
+const session = require("express-session");
+const MongoStore = require("connect-mongodb-session")(session);
+const flash = require("connect-flash");
 
 const User = require("./models/User");
 
@@ -13,6 +16,7 @@ const MONGO_URI =
 
 const firstVisitRout = require("./routs/firstVisit");
 const regirserRout = require("./routs/auth");
+const myPageRout = require("./routs/myPage");
 
 const PORT = 3000;
 
@@ -26,6 +30,10 @@ const hbs = exphbs.create({
     handlebars: allowInsecurePrototypeAccess(Handlebars),
 });
 
+const store = new MongoStore({
+    collection: "sessions",
+    uri: MONGO_URI,
+});
 app.engine("hbs", hbs.engine);
 app.set("view engine", "hbs");
 app.set("views", "views");
@@ -33,10 +41,21 @@ app.set("views", "views");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "view", "img")));
 
+app.use(
+    session({
+        secret: "seccccret",
+        resave: false,
+        saveUninitialized: false,
+        store,
+    })
+);
+
 app.use(express.urlencoded({ extended: true }));
+app.use(flash());
 
 app.use("/", firstVisitRout);
 app.use("/auth", regirserRout);
+app.use("/mypage", myPageRout);
 
 const start = async () => {
     try {

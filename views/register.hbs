@@ -1,47 +1,47 @@
 <div class="content-auth-page">
     <div class="auth_register">
         <h5>Регистрация</h5>
-        <div class="row auth_register_form">
-            <form class="col s12" method="POST" action="/auth/register">
-                <div class="row">
-                    <span class="">
+        <div class="row">
+            <form class="" method="POST" action="/auth/register">
+                <div class="auth-register-form">
+                    <div class="row auth-register-form_child">
                         <div class="row">
-                            <div class="input-field col s12">
+                            <div class="input-field">
                                 <input id="login" type="text" class="validate">
                                 <label for="login">Логин</label>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="input-field col s12">
+                        <div class="row auth-register-form_child">
+                            <div class="input-field">
                                 <input id="password" type="text" class="validate">
                                 <label for="password">Пароль</label>
                             </div>
                         </div>
-                    </span>
-                    <span>
-                        <h6>Будьте честны</h6>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                <label for="textarea1">Расскажите немного о себе</label>
-                            </div>
-                        </div>
-                    </span>
-                </div>
+                    </div>
 
-                <h6>Пол</h6>
-                <p>
-                    <label>
-                        <input name="group1" type="radio" checked />
-                        <span>Парень</span>
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        <input name="group1" type="radio" />
-                        <span>Девушка</span>
-                    </label>
-                </p>
+                    <div class="row auth-register-form_child">
+                        <div class="input-field">
+                            <textarea id="description" class="materialize-textarea"></textarea>
+                            <label for="description">Расскажите немного о себе</label>
+                        </div>
+                    </div>
+                    <div class="row auth-register-form_child">
+                        <h6>Пол</h6>
+                        <p>
+                            <label>
+                                <input name="group1" type="radio" checked />
+                                <span>Парень</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input name="group1" type="radio" />
+                                <span>Девушка</span>
+                            </label>
+                        </p>
+                    </div>
+
+                </div>
 
                 <button class="waves-effect waves-light btn" type="submit">Зарегистрироваться</button>
             </form>

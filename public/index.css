@@ -74,9 +74,18 @@ nav {
     align-items: center;
 }
 
-.auth_register_form {
-    display: flex;
-    flex-direction: row;
+.auth-register-form {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    column-gap: 3em;
+    grid-auto-rows: minmax(auto, auto);
+    justify-items: center;
+}
+.auth-register-form_child {
+    width: 100%;
+    display: grid;
+    /* position: fixed; */
+    /* justify-items: center; */
 }
 
 .auth_login form {
@@ -115,4 +124,8 @@ nav {
 
 .auth_register::after {
     transform: translateY(600px) skewY(4deg);
+}
+
+.auth-register-form_child > div > .input-field > input {
+    width: 80%;
 }
