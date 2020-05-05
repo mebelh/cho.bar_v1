@@ -17,6 +17,7 @@ const MONGO_URI =
 const firstVisitRout = require("./routs/firstVisit");
 const regirserRout = require("./routs/auth");
 const myPageRout = require("./routs/myPage");
+const searchRout = require("./routs/search");
 
 const PORT = 3000;
 
@@ -56,6 +57,7 @@ app.use(flash());
 app.use("/", firstVisitRout);
 app.use("/auth", regirserRout);
 app.use("/mypage", myPageRout);
+app.use("/search", searchRout);
 
 const start = async () => {
     try {
