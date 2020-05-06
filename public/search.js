@@ -9,15 +9,24 @@ like.addEventListener("click", async (e) => {
     })
         .then((res) => res.json())
         .then((c) => {
-            console.log(c);
             document.querySelector(".imgBlock_name").textContent = c.name;
             document.querySelector(".imgBlock_age").textContent = c.age;
             document.querySelector(".descriptionBloc_text").textContent =
                 c.description;
             document.querySelector("#id").dataset.id = c.id;
         });
-
     e.preventDefault();
+
+    document.querySelector(".alert").classList.toggle("modal_good");
+
+    document.querySelector(".alert").textContent =
+        "Будем ждать взаимную симпатию))";
+
+    setTimeout(() => {
+        document.querySelector(".alert").classList.toggle("modal_good");
+
+        document.querySelector(".alert").textContent = "";
+    }, 3000);
 });
 
 next.addEventListener("click", async (e) => {

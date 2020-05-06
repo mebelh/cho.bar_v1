@@ -1,6 +1,11 @@
+html,
+body {
+    min-width: 320px;
+}
+
 body {
     background-color: #f4f4f4;
-    min-width: 1000px;
+    min-width: 324px;
 }
 
 .shadow {
@@ -97,9 +102,9 @@ body {
 }
 
 .auth_register {
-    margin-left: 100px;
-    width: 600px;
-    height: 600px;
+    margin-left: 3vw;
+    width: 44vw;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -113,12 +118,11 @@ body {
     justify-items: center;
 }
 
+
 .auth-register-form_child {
     width: 100%;
     display: grid;
 }
-
-
 
 .auth_login::after,
 .auth_register::after,
@@ -283,4 +287,23 @@ body {
 
 .editPage_form_description form {
     width: 100%;
+}
+
+.modall {
+    width: 100%;
+    display: grid;
+    justify-items: start;
+}
+
+.modal_good {
+    background-color: #0097a7;
+    padding: 1rem;
+    color: #fff;
+    font-size: 1.3em;
+    border-radius: 10px;
+    transition: ease .2s;
+}
+
+.modal_err {
+    background-color: red;
 }

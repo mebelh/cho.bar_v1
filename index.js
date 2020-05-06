@@ -75,7 +75,7 @@ const start = async () => {
             useFindAndModify: false,
         });
 
-        // for (let index = 2; index < 14; index++) {
+        // for (let index = 2; index < 24; index++) {
         //     const element = new User({
         //         login: "clon" + index,
         //         password: "clone" + index,

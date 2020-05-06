@@ -17,11 +17,14 @@ router.post("/", async (req, res) => {
         ? await bcrypt.hash(req.body.password, 12)
         : req.session.user.password;
 
+    const img = req.body.img ? req.body.img : req.session.user.img;
+
     delete req.body.password;
 
     await User.findByIdAndUpdate(req.session.user._id, {
         ...req.body,
         password,
+        img,
     });
 
     req.session.user = await User.findByIdAndUpdate(req.session.user._id);

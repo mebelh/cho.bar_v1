@@ -1,0 +1,210 @@
+/* Адаптив */
+
+
+@media (max-width: 414px) {
+
+    .content-auth-page {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .right-content-block {
+        flex-direction: column;
+        height: 80vh;
+        width: 100vw;
+    }
+
+    .right-content-block_text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 13vw;
+    }
+
+    .img_girl,
+    .img_boy {
+        height: 50vw;
+        margin-top: 4rem;
+    }
+
+    /* Логотип */
+
+    .brand-logo {
+        margin: 0;
+        padding: 0;
+        margin-left: 0vw;
+    }
+
+    /* Авторизация */
+
+    .auth_login,
+    .auth_register {
+        background-color: #fff;
+        position: relative;
+    }
+
+    .auth_login {
+        margin-left: 2vw;
+        min-width: 0px;
+        width: 96vw;
+        height: 74vh;
+        margin-bottom: 7vh;
+    }
+
+    .auth_login form {
+        width: 90%;
+    }
+
+    .auth_login .btn {
+        font-size: 1.2em;
+        max-width: 80vw;
+    }
+
+    .auth_login h5 {
+        font-size: 2em;
+    }
+
+    .auth_login div {
+        width: 80vw;
+    }
+
+    form p {
+        font-size: 1.3em;
+    }
+
+
+    .auth_register {
+        margin-left: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .auth-register-form {
+        width: 90vw;
+        grid-template-columns: 1fr;
+    }
+
+    .auth_login::after,
+    .auth_register::after,
+    .menu::after {
+        display: none;
+    }
+
+    /* Меню */
+
+    .menu {
+        position: fixed;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        width: 100vw;
+        height: 40vh;
+        top: 10vh;
+        min-height: 0px;
+        margin-left: 0px;
+        font-size: 2em;
+        transition: ease .1s;
+        transform: translateY(1%);
+        background-color: #ffffffee;
+    }
+
+    .menu.show {
+        transition: ease .2s;
+        transform: translateY(-110%);
+    }
+
+    .menu ul li a {
+        color: #343434;
+        font-size: 1.5rem;
+    }
+
+    /* Моя страница */
+
+    .mypage {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mypage .btn {
+        background-color: #003a65;
+    }
+
+    .mypage .buttons {
+        position: fixed;
+        bottom: 10vh;
+    }
+
+    .mypage .imgBlock .imgBlock_img {
+        width: 60vw;
+        height: 60vw;
+        background-color: #fff;
+        margin-top: 10px;
+    }
+
+    .descriptionBloc {
+        width: 90vw;
+        margin-right: 0vw;
+        min-height: 10vh;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+
+    /* Изменение информации */
+
+    .editPage {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .editPage_form {
+        margin-top: 0px;
+        padding: 20px;
+        background-color: #fff;
+    }
+
+    .editPage_form form {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 4rem;
+    }
+
+
+    .modal_good {
+
+        background-color: #0097a7;
+        padding: 1rem;
+        color: #fff;
+        font-size: 1.3em;
+        border-radius: 10px;
+        transition: ease .2s;
+    }
+
+    .modal_err {
+        background-color: red;
+    }
+
+}
+
+/* @media (min-width: 768px) {
+    * {
+        background-color: red;
+    }
+}
+
+@media (min-width: 992px) {
+    * {
+        background-color: red;
+    }
+}
+
+@media (min-width: 1200px) {
+    * {
+        background-color: red;
+    }
+} */

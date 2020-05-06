@@ -47,7 +47,16 @@ router.post("/like/:id", async (req, res) => {
     const user = await User.findOne({ _id: req.session.user._id });
 
     likeCandidate.likes.peoples.push(user);
+
     await likeCandidate.save();
+
+    req.session.candidate = (
+        await User.aggregate([{ $sample: { size: 1 } }])
+    )[0];
+
+    const candidate = await constractCandidate(req.session);
+
+    res.send({ ...candidate });
 });
 
 module.exports = router;
