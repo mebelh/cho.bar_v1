@@ -11,8 +11,12 @@ like.addEventListener("click", async (e) => {
         .then((c) => {
             document.querySelector(".imgBlock_name").textContent = c.name;
             document.querySelector(".imgBlock_age").textContent = c.age;
+            document.querySelector(
+                ".imgBlock_img"
+            ).style.backgroundImage = `url(${c.img})`;
             document.querySelector(".descriptionBloc_text").textContent =
                 c.description;
+
             document.querySelector("#id").dataset.id = c.id;
         });
     e.preventDefault();
@@ -37,6 +41,9 @@ next.addEventListener("click", async (e) => {
         .then((c) => {
             document.querySelector(".imgBlock_name").textContent = c.name;
             document.querySelector(".imgBlock_age").textContent = c.age;
+            document.querySelector(
+                ".imgBlock_img"
+            ).style.backgroundImage = `url(${c.img})`;
             document.querySelector(".descriptionBloc_text").textContent =
                 c.description;
             document.querySelector("#id").dataset.id = c.id;
