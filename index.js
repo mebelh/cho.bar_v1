@@ -22,7 +22,7 @@ const searchRout = require("./routs/search");
 const editInfRout = require("./routs/editInf");
 const messagesRout = require("./routs/messages");
 
-const PORT = 3000;
+const PORT = 80;
 
 const {
     allowInsecurePrototypeAccess,

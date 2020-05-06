@@ -8,6 +8,20 @@ body {
     min-width: 324px;
 }
 
+.shtora {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff80;
+    z-index: 1;
+    transition: ease 1s;
+}
+
+.overflow_hidden {
+    overflow: hidden;
+}
+
 .shadow {
     box-shadow: 1px 2px 2px rgba(4, 93, 177, 0.356);
 }
@@ -43,7 +57,7 @@ body {
 
 .nav-wrapper {
     border-bottom: solid 1px #003a65;
-    z-index: 2;
+    z-index: 3;
     background-color: #fff;
     height: 8vh;
 }
@@ -306,4 +320,8 @@ body {
 
 .modal_err {
     background-color: red;
+}
+
+.logout_hide {
+    display: none;
 }

@@ -3,6 +3,7 @@
 
 @media (max-width: 414px) {
 
+    /* Навбар */
     .content-auth-page {
         display: flex;
         flex-direction: column;
@@ -93,6 +94,7 @@
     /* Меню */
 
     .menu {
+        z-index: 2;
         position: fixed;
         flex-direction: column;
         align-items: center;
@@ -110,7 +112,7 @@
 
     .menu.show {
         transition: ease .2s;
-        transform: translateY(-110%);
+        transform: translateY(-130%);
     }
 
     .menu ul li a {
@@ -133,14 +135,14 @@
 
     .mypage .buttons {
         position: fixed;
-        bottom: 10vh;
+        bottom: 5vh;
     }
 
     .mypage .imgBlock .imgBlock_img {
         width: 90vw;
         height: 90vw;
         background-color: #fff;
-        margin-top: 10px;
+        margin-top: 3vw;
     }
 
     .descriptionBloc {
@@ -148,7 +150,7 @@
         margin-right: 0vw;
         min-height: 10vh;
         margin-top: 10px;
-        margin-bottom: 20px;
+        margin-bottom: 8vh;
         font-size: 1.2rem;
         padding: 10px;
     }
@@ -174,9 +176,7 @@
         grid-gap: 4rem;
     }
 
-
     .modal_good {
-
         background-color: #0097a7;
         padding: 1rem;
         color: #fff;
@@ -187,6 +187,10 @@
 
     .modal_err {
         background-color: red;
+    }
+
+    .logout_hide {
+        display: block;
     }
 
 }
