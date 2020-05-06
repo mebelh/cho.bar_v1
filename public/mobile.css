@@ -140,7 +140,8 @@
 
     .mypage .imgBlock .imgBlock_img {
         width: 90vw;
-        height: 90vw;
+        min-height: 90vw;
+        height: inherit;
         background-color: #fff;
         margin-top: 3vw;
     }
