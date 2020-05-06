@@ -1,5 +1,6 @@
 body {
     background-color: #f4f4f4;
+    min-width: 1000px;
 }
 
 .shadow {
@@ -16,15 +17,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    right: 100px;
     background-color: #fff;
     height: calc(100vh - 64px);
-    width: 700px;
+    width: 50vw;
 }
 
 .img_girl,
 .img_boy {
-    height: 400px;
+    height: 25vw;
     margin-top: 4rem;
 }
 
@@ -37,14 +37,18 @@ body {
 }
 
 .nav-wrapper {
-    background-color: #fbfbfb;
-    padding: 0 3rem 0 3rem;
-    z-index: 3;
     border-bottom: solid 1px #003a65;
+    z-index: 2;
+    background-color: #fff;
+    height: 8vh;
 }
 
-nav {
-    z-index: 2;
+
+.brand-logo {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    margin-left: 10vw;
 }
 
 .nav-wrapper a {
@@ -53,6 +57,8 @@ nav {
     text-shadow: none;
 }
 
+/* Авторизация */
+
 .auth_login,
 .auth_register {
     background-color: #fff;
@@ -60,12 +66,34 @@ nav {
 }
 
 .auth_login {
-    margin-left: 180px;
-    width: 400px;
-    height: 440px;
+    margin-left: 12vw;
+    min-width: 300px;
+    width: 26vw;
+    height: 65vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.auth_login form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth_login .btn {
+    background-color: #003a65;
+    max-width: 20vw;
+    max-height: 5vh;
+}
+
+.auth_login h5 {
+    font-size: 1.3em;
+}
+
+.auth_login div {
+    width: 18vw;
 }
 
 .auth_register {
@@ -84,27 +112,13 @@ nav {
     grid-auto-rows: minmax(auto, auto);
     justify-items: center;
 }
+
 .auth-register-form_child {
     width: 100%;
     display: grid;
-    /* position: fixed; */
-    /* justify-items: center; */
 }
 
-.auth_login form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
-.auth_login .btn {
-    background-color: #003a65;
-}
-
-.auth_login div {
-    width: 240px;
-}
 
 .auth_login::after,
 .auth_register::after,
@@ -112,7 +126,7 @@ nav {
     display: block;
     content: "";
     width: 100%;
-    height: 43px;
+    height: 3vw;
     position: absolute;
     top: 0;
     left: 0;
@@ -123,14 +137,14 @@ nav {
 }
 
 .auth_login::after {
-    transform: translateY(440px) skewY(6deg);
+    transform: translateY(65vh) skewY(6deg);
 }
 
 .auth_register::after {
-    transform: translateY(600px) skewY(4deg);
+    transform: translateY(70vh) skewY(4deg);
 }
 
-.auth-register-form_child > div > .input-field > input {
+.auth-register-form_child>div>.input-field>input {
     width: 80%;
 }
 
@@ -144,6 +158,7 @@ nav {
     margin-left: 100px;
     box-shadow: 1px 2px 2px rgba(4, 93, 177, 0.356);
 }
+
 .menu::after {
     transform: translateY(400px) skewY(-6deg);
     transform-origin: left;
@@ -174,6 +189,7 @@ nav {
 .mypage {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
     align-items: start;
     justify-items: center;
 }
@@ -182,7 +198,7 @@ nav {
     width: 250px;
     height: 250px;
     background-color: #fff;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .descriptionBloc {
@@ -190,7 +206,7 @@ nav {
     width: 500px;
     min-height: 400px;
     margin-right: 200px;
-    margin-top: 100px;
+    margin-top: 50px;
     font-size: 1.2rem;
     padding: 10px;
 }
@@ -222,6 +238,7 @@ nav {
 .imgBlock_img_edit {
     opacity: 0.5;
 }
+
 /* Страница поиска пар */
 
 .mypage .buttons {
@@ -230,4 +247,40 @@ nav {
     margin-top: 50px;
     grid-column: 2/3;
     justify-content: end;
+}
+
+.mypage .edit-btn {
+    grid-column: 2/3;
+}
+
+/* Изменение информации */
+
+.editPage {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: start;
+    justify-items: start;
+}
+
+.editPage_form {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.editPage .imgBlock .imgBlock_img {
+    width: 250px;
+    height: 250px;
+    background-color: #fff;
+    margin-top: 100px;
+}
+
+.editPage_form form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4rem;
+}
+
+.editPage_form_description form {
+    width: 100%;
 }

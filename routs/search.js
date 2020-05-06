@@ -3,16 +3,26 @@ const router = Router();
 
 const User = require("../models/User");
 
-router.get("/", async (req, res) => {
-    const candidateT = await User.aggregate([{ $sample: { size: 1 } }]);
+const constractCandidate = async (session) => {
+    let e = session.candidate;
+    if (!e) {
+        e = (await User.aggregate([{ $sample: { size: 1 } }]))[0];
+        session.save();
+    }
 
-    const candidate = {
-        name: candidateT[0].name,
-        age: candidateT[0].age,
-        description: candidateT[0].description,
-        id: candidateT[0]._id,
-        img: candidateT[0].img,
+    return {
+        name: e.name,
+        age: e.age,
+        description: e.description,
+        id: e._id,
+        img: e.img,
     };
+};
+
+router.get("/", async (req, res) => {
+    const candidate = await constractCandidate(req.session);
+
+    // console.log(candidate);
 
     res.render("../views/search.hbs", {
         title: "Смотреть анкеты",
@@ -23,16 +33,12 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/next", async (req, res) => {
-    const candidateT = (await User.aggregate([{ $sample: { size: 1 } }]))[0];
-    // candidateT = candidateT[0];
-    const candidate = {
-        age: candidateT.age,
-        name: candidateT.name,
-        description: candidateT.description,
-        id: candidateT._id,
-    };
+    req.session.candidate = (
+        await User.aggregate([{ $sample: { size: 1 } }])
+    )[0];
+    const candidate = await constractCandidate(req.session);
 
-    res.json(candidate);
+    res.send(candidate);
 });
 
 router.post("/like/:id", async (req, res) => {
@@ -42,10 +48,6 @@ router.post("/like/:id", async (req, res) => {
 
     likeCandidate.likes.peoples.push(user);
     await likeCandidate.save();
-
-    // console.log(req.params.id);
-    // res.json();
-    // likeCandidate.likes.peoples.push(req.body.id);
 });
 
 module.exports = router;

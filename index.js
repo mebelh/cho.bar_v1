@@ -19,6 +19,8 @@ const firstVisitRout = require("./routs/firstVisit");
 const regirserRout = require("./routs/auth");
 const myPageRout = require("./routs/myPage");
 const searchRout = require("./routs/search");
+const editInfRout = require("./routs/editInf");
+const messagesRout = require("./routs/messages");
 
 const PORT = 3000;
 
@@ -62,6 +64,8 @@ app.use("/", firstVisitRout);
 app.use("/auth", regirserRout);
 app.use("/mypage", myPageRout);
 app.use("/search", searchRout);
+app.use("/editinf", editInfRout);
+app.use("/messages", messagesRout);
 
 const start = async () => {
     try {
@@ -71,12 +75,14 @@ const start = async () => {
             useFindAndModify: false,
         });
 
-        // for (let index = 0; index < 10; index++) {
+        // for (let index = 2; index < 14; index++) {
         //     const element = new User({
-        //         login: "clone" + index,
+        //         login: "clon" + index,
         //         password: "clone" + index,
-        //         description: "i am bot num" + index,
+        //         description: "i am bot num " + index + ". Hello)))",
         //         gender: "male",
+        //         name: "bot" + index,
+        //         age: index + 3,
         //     });
         //     await element.save();
         // }

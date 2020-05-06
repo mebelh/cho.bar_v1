@@ -1,0 +1,51 @@
+<div class="editPage">
+    {{>menu}}
+
+    <div class="editPage-edit">
+
+        <div class="row editPage_form">
+            <form class="col s12" method="POST">
+                <div class="">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input name="name" id="name" type="text" class="validate" value="{{name}}">
+                            <label for="name">Имя</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="age" type="text" name="age" class="validate" value="{{age}}">
+                            <label for="age">Ваш возраст</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="email" name="email" class="validate" value="{{email}}">
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="img" type="text" name="img" class="validate">
+                            <label for="img">URL аватарки</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="password" type="text" name="password" class="validate">
+                            <label for="password">Новый пароль</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row auth-register-form_child">
+                    <div class="input-field">
+                        <textarea id="description" name="description"
+                            class="materialize-textarea">{{description}}</textarea>
+                        <label for="description">Расскажите немного о себе</label>
+                    </div>
+                </div>
+                <input type="submit" class="btn" value="Сохранить">
+            </form>
+        </div>
+
+    </div>
+</div>

@@ -60,7 +60,11 @@ router.post("/login", async (req, res) => {
                 if (err) {
                     throw err;
                 } else {
-                    res.redirect("/mypage");
+                    if (!candidate.age || !candidate.name) {
+                        res.redirect("/editinf");
+                    } else {
+                        res.redirect("/mypage");
+                    }
                 }
             });
         } else {
