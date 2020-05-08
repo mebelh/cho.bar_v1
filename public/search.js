@@ -25,12 +25,16 @@ like.addEventListener("click", async (e) => {
 
     document.querySelector(".alert").textContent =
         "Будем ждать взаимную симпатию))";
+    setTimeout(() => {
+        document.querySelector(".alert").classList.toggle("modal_hide");
+    }, 3000);
 
     setTimeout(() => {
         document.querySelector(".alert").classList.toggle("modal_good");
+        document.querySelector(".alert").classList.toggle("modal_hide");
 
         document.querySelector(".alert").textContent = "";
-    }, 3000);
+    }, 3200);
 });
 
 next.addEventListener("click", async (e) => {
