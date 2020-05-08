@@ -194,7 +194,7 @@ body {
     justify-content: center;
 }
 
-.menu ul li :hover {
+.menu ul li:hover {
     background-color: #f0f0f0;
 }
 
@@ -324,4 +324,18 @@ body {
 
 .logout_hide {
     display: none;
+}
+
+@keyframes modal_animation {
+    0% {
+        left: -100%;
+    }
+
+    10% {
+        left: 0;
+    }
+
+    100% {
+        left: 0;
+    }
 }

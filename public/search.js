@@ -3,6 +3,10 @@ const next = document.getElementById("search_next");
 const id = document.getElementById("id").value;
 // console.log(like, next);
 
+const modal_alert = document.createElement("div");
+modal_alert.classList.add("modall", "modal_good");
+modal_alert.innerHTML = `<div class="alert">Ок! Будем ждать взаимную симпатию))</div>`;
+
 like.addEventListener("click", async (e) => {
     fetch("/search/like/" + document.querySelector("#id").dataset.id, {
         method: "POST",
@@ -21,20 +25,7 @@ like.addEventListener("click", async (e) => {
         });
     e.preventDefault();
 
-    document.querySelector(".alert").classList.toggle("modal_good");
-
-    document.querySelector(".alert").textContent =
-        "Будем ждать взаимную симпатию))";
-    setTimeout(() => {
-        document.querySelector(".alert").classList.toggle("modal_hide");
-    }, 3000);
-
-    setTimeout(() => {
-        document.querySelector(".alert").classList.toggle("modal_good");
-        document.querySelector(".alert").classList.toggle("modal_hide");
-
-        document.querySelector(".alert").textContent = "";
-    }, 3200);
+    document.querySelector(".mypage").appendChild(modal_alert);
 });
 
 next.addEventListener("click", async (e) => {
